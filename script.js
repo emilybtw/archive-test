@@ -46,6 +46,6 @@ beginButton.addEventListener("click", () => {
   beginButton.disabled = true;
 
   window.setTimeout(() => {
-    window.location.href = "exhibit-a.html";
+    window.location.href = "exhibit-hub.html";
   }, 5000);
 });

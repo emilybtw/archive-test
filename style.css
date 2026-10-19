@@ -90,7 +90,9 @@ h1.is-flickering {
   line-height: 1.7;
 }
 
-button {
+button,
+.exhibit-button {
+  display: inline-block;
   padding: 14px 22px;
   border: 1px solid #ffe66d;
   border-radius: 2px;
@@ -99,11 +101,14 @@ button {
   font: inherit;
   font-size: 1rem;
   cursor: pointer;
+  text-decoration: none;
   transition: background-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
 }
 
 button:hover,
-button:focus-visible {
+.exhibit-button:hover,
+button:focus-visible,
+.exhibit-button:focus-visible {
   outline: none;
   background: #ffe66d;
   color: #080d0a;
@@ -123,6 +128,23 @@ button:focus-visible {
 .exhibit-page {
   width: min(100%, 720px);
   text-align: center;
+}
+
+.exhibit-hub {
+  width: min(100%, 720px);
+  text-align: center;
+}
+
+.exhibit-navigation {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.exhibit-button {
+  padding: 24px;
+  font-size: 1.25rem;
 }
 
 .exhibit-image-placeholder {
