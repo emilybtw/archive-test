@@ -91,7 +91,8 @@ h1.is-flickering {
 }
 
 button,
-.exhibit-button {
+.exhibit-button,
+.back-button {
   display: inline-block;
   padding: 14px 22px;
   border: 1px solid #ffe66d;
@@ -107,8 +108,10 @@ button,
 
 button:hover,
 .exhibit-button:hover,
+.back-button:hover,
 button:focus-visible,
-.exhibit-button:focus-visible {
+.exhibit-button:focus-visible,
+.back-button:focus-visible {
   outline: none;
   background: #ffe66d;
   color: #080d0a;
@@ -145,6 +148,14 @@ button:focus-visible,
 .exhibit-button {
   padding: 24px;
   font-size: 1.25rem;
+}
+
+.back-button {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
 }
 
 .exhibit-image-placeholder {
