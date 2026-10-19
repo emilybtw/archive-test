@@ -1,0 +1,135 @@
+:root {
+  color-scheme: dark;
+  font-family: "Courier New", Courier, monospace;
+  background: #080d0a;
+  color: #ffe66d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(ellipse at center, rgba(61, 53, 21, 0.28), transparent 65%),
+    #080d0a;
+}
+
+.title-screen {
+  width: min(100%, 720px);
+  padding: clamp(32px, 8vw, 72px) 24px;
+  text-align: center;
+  border: 1px solid #76651e;
+  box-shadow: 0 0 36px rgba(255, 218, 44, 0.08), inset 0 0 28px rgba(255, 218, 44, 0.035);
+}
+
+.eyebrow {
+  margin: 0 0 24px;
+  color: #d1b84e;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+}
+
+h1 {
+  margin: 0;
+  color: #fff0a3;
+  font-size: clamp(2rem, 8vw, 4rem);
+  line-height: 1.1;
+  text-shadow: 0 0 18px rgba(255, 230, 109, 0.35);
+}
+
+.title-line {
+  display: block;
+}
+
+.title-letter {
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 80ms ease-out;
+}
+
+.title-letter.is-visible {
+  opacity: 1;
+}
+
+h1.is-flickering {
+  animation: title-flicker 1.4s steps(1, end) infinite;
+}
+
+@keyframes title-flicker {
+  0%, 18%, 36%, 54%, 72%, 100% {
+    opacity: 1;
+  }
+
+  9%, 27%, 45%, 63%, 81% {
+    opacity: 0.25;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title-letter {
+    opacity: 1;
+    transition: none;
+  }
+
+  h1.is-flickering {
+    animation: none;
+  }
+}
+
+.intro {
+  max-width: 480px;
+  margin: 24px auto 36px;
+  color: #8cae94;
+  line-height: 1.7;
+}
+
+button {
+  padding: 14px 22px;
+  border: 1px solid #ffe66d;
+  border-radius: 2px;
+  background: transparent;
+  color: #fff0a3;
+  font: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
+}
+
+button:hover,
+button:focus-visible {
+  outline: none;
+  background: #ffe66d;
+  color: #080d0a;
+  box-shadow: 0 0 18px rgba(255, 230, 109, 0.3);
+}
+
+.loading-message {
+  min-height: 1.5em;
+  margin: 24px 0 0;
+  color: #fff0a3;
+}
+
+.loading-message:empty {
+  display: none;
+}
+
+.exhibit-page {
+  width: min(100%, 720px);
+  text-align: center;
+}
+
+.exhibit-image-placeholder {
+  width: min(100%, 600px);
+  aspect-ratio: 1;
+  margin: 32px auto 0;
+  border: 1px solid #76651e;
+  background: rgba(255, 230, 109, 0.025);
+  box-shadow: 0 0 36px rgba(255, 218, 44, 0.08), inset 0 0 28px rgba(255, 218, 44, 0.035);
+}
