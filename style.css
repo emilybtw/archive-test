@@ -150,6 +150,21 @@ button:focus-visible,
   font-size: 1.25rem;
 }
 
+.exhibit-button,
+.back-button {
+  border-color: var(--exhibit-accent, #ffe66d);
+  color: var(--exhibit-accent, #fff0a3);
+}
+
+.exhibit-button:hover,
+.exhibit-button:focus-visible,
+.back-button:hover,
+.back-button:focus-visible {
+  background: var(--exhibit-accent, #ffe66d);
+  color: #080d0a;
+  box-shadow: 0 0 18px var(--exhibit-glow, rgba(255, 230, 109, 0.3));
+}
+
 .back-button {
   position: fixed;
   top: 24px;
@@ -159,10 +174,130 @@ button:focus-visible,
 }
 
 .exhibit-image-placeholder {
+  position: relative;
   width: min(100%, 600px);
   aspect-ratio: 1;
   margin: 32px auto 0;
-  border: 1px solid #76651e;
-  background: rgba(255, 230, 109, 0.025);
-  box-shadow: 0 0 36px rgba(255, 218, 44, 0.08), inset 0 0 28px rgba(255, 218, 44, 0.035);
+  border: 1px solid color-mix(in srgb, var(--exhibit-accent, #ffe66d) 55%, transparent);
+  background: color-mix(in srgb, var(--exhibit-accent, #ffe66d) 3%, transparent);
+  box-shadow: 0 0 36px var(--exhibit-glow, rgba(255, 218, 44, 0.08)), inset 0 0 28px var(--exhibit-glow, rgba(255, 218, 44, 0.035));
+}
+
+.folder-item {
+  position: absolute;
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  transform: translate(-50%, -50%);
+}
+
+.folder-item-one {
+  top: 20%;
+  left: 24%;
+}
+
+.folder-item-two {
+  top: 26%;
+  left: 72%;
+}
+
+.folder-item-three {
+  top: 70%;
+  left: 30%;
+}
+
+.folder-item-four {
+  top: 68%;
+  left: 74%;
+}
+
+button.folder-button {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 64px;
+  padding: 8px;
+  border-color: transparent;
+  color: var(--exhibit-accent);
+}
+
+.folder-button svg {
+  width: 100%;
+  height: 100%;
+  fill: color-mix(in srgb, var(--exhibit-accent) 22%, transparent);
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.5;
+  filter: drop-shadow(0 0 7px var(--exhibit-glow));
+}
+
+.exhibit-b .folder-button:hover,
+.exhibit-b .folder-button:focus-visible {
+  background: color-mix(in srgb, var(--exhibit-accent) 18%, transparent);
+  color: var(--exhibit-accent);
+  box-shadow: 0 0 18px var(--exhibit-glow);
+}
+
+.folder-loading {
+  color: var(--exhibit-accent);
+  font-size: 0.85rem;
+  text-shadow: 0 0 8px var(--exhibit-glow);
+}
+
+.folder-loading[hidden] {
+  display: none;
+}
+
+.exhibit-log {
+  position: absolute;
+  margin: 0;
+  color: var(--exhibit-accent);
+  font-size: clamp(0.75rem, 2.5vw, 1rem);
+  text-shadow: 0 0 8px var(--exhibit-glow);
+}
+
+.exhibit-log-tod {
+  top: 22%;
+  left: 14%;
+}
+
+.exhibit-log-dob {
+  right: 12%;
+  bottom: 24%;
+}
+
+.exhibit-page h1 {
+  color: var(--exhibit-accent, #fff0a3);
+  text-shadow: 0 0 18px var(--exhibit-glow, rgba(255, 230, 109, 0.35));
+}
+
+body.exhibit-a,
+.exhibit-a-button {
+  --exhibit-accent: #68f28e;
+  --exhibit-glow: rgba(104, 242, 142, 0.3);
+}
+
+body.exhibit-b,
+.exhibit-b-button {
+  --exhibit-accent: #ff9d4a;
+  --exhibit-glow: rgba(255, 157, 74, 0.3);
+}
+
+body.exhibit-c,
+.exhibit-c-button {
+  --exhibit-accent: #ff5b5b;
+  --exhibit-glow: rgba(255, 91, 91, 0.3);
+}
+
+body.exhibit-d,
+.exhibit-d-button {
+  --exhibit-accent: #c084fc;
+  --exhibit-glow: rgba(192, 132, 252, 0.3);
+}
+
+body[class^="exhibit-"] {
+  background:
+    radial-gradient(ellipse at center, color-mix(in srgb, var(--exhibit-accent) 10%, transparent), transparent 65%),
+    #080d0a;
 }
